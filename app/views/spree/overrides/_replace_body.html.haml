@@ -1,0 +1,337 @@
+%body
+
+  .container
+		.row-# start header -->
+			.span4.logo
+			%a{:href => "index.html"}
+				%h1 Bootstrap Cart
+			
+			.span8
+			
+				.row
+					.span1 &nbsp;
+					.span2
+						%h4 Currency
+						%a{:href => "#"} USD |
+						%a{:href => "#"}
+						  %strong GBP |
+						%a{:href => "#"} EUR
+					
+					.span2
+						%a{:href => "cart.html"}
+						  %h4 Shopping Cart (3)
+						%a{:href => "cart.html"} 2 item(s) - $40.00
+
+					.span3.customer_service
+						%h4 FREE delivery on ALL orders
+						%h4
+						  %small Customer service: 0800 8475 548
+				%br/
+				.row
+					.links.pull-right
+						%a{:href => "index.html"} Home
+						 |
+						%a{:href => "my_account.html"} My Account
+						   |
+						%a{:href => "cart.html"} Shopping Cart
+						   |
+						%a{:href => "two-column.html"} About
+						   |
+						%a{:href => "contact.html"} Contact
+					<!-- end header -->
+		
+    .row-# start nav
+      .span12
+        .navbar
+          .navbar-inner
+            .container{:style => "width: auto;"}
+              %a.btn.btn-navbar{:data => {:toggle => "collapse", :target => ".nav-collapse"}}
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              .nav-collapse
+					    %ul.nav
+              %li.dropdown
+                %a.dropdown-toggle{:href => "category.html", :data => {:toggle => "dropdown"}}     Desktops
+                %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "listings.html"} PC
+              %li
+                %a{:href => "listings.html"} Mac
+              %li.divider
+              %li.nav-header Accessories
+              %li
+                %a{:href => "listings.html"} Keyboard
+              %li
+                %a{:href="listings.html"} Speakers
+              %li
+                %a{:href => "category.html"} Laptops
+              %li
+                %a{:href => "category.html"} Components
+              %li
+                %a{:href => "category.html"} Tablets
+              %li.dropdown
+                %a.dropdown-toggle{:href => "category.html", :data => {:toggle => "dropdown"}}Software
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "listings.html"} Business & Office
+                %li
+                  %a{:href => "listings.html"} Children's Fun & Learning
+                %li
+                  %a{:href => "listings.html"}  Digital Imaging
+                %li.divider
+                %li.nav-header PC Games
+                %li
+                  %a{:href="listings.html"} Action & Shooter
+                %li
+                  %a{:href => "listings.html"} Adventure
+                %li
+                  %a{:href => "listings.html"} Fighting							 
+                %li
+                  %a{:href => "listings.html"} Phones &amp; PDAs
+
+
+              %ul.nav.pull-right
+                %li.divider-vertical
+              %form.navbar-search{:action => ""}
+                %input.search-query.span2{:type => "text", :placeholder="Search"}
+                %button.btn.btn-primary.btn-small.search_btn{:type => "submit"} Go
+							
+						-# nav-collapse 
+					-# navbar-inner
+				-# navbar
+		-# end nav
+		
+    .row
+      .span3
+			-# start sidebar -->
+
+        %ul.breadcrumb
+          %li Categories
+
+      .span3.product_list
+        %ul.nav
+          %li
+            %a.active{:href="category.html"} Desktops (12)
+            %ul
+              %li
+                %a{:href => "listings.html"}  - PC (11)
+              %li
+                %a.active{:href => "listings.html"}  - Mac (1)
+          %li
+            %a{:href="category.html"} Laptops &amp; Notebooks (5)
+            %ul
+              %li
+                %a{:href="listings.html"}  - Macs (0)
+              %li
+                %a{:href="listings.html"}  - Windows (0)
+		      %li
+			      %a{:href="category.html"} Components (2)
+              %ul
+                %li
+                  %a{:href => "listings.html"}  - Mice and Trackballs (0)
+                %li
+                  %a{:href => "listings.html"}  - Monitors (2)
+                %li
+                  %a{:href => "listings.html"}  - Printers (0)
+                %li
+                  %a{:href => "listings.html"}  - Scanners (0)
+                %li
+                  %a{:href => "listings.html"}  - Web Cameras (0)
+          %li
+            %a{:href => "category.html"} Tablets (1)
+          %li
+            %a{:href => "category.html"} Software (0)
+          %li
+            %a{:href => "category.html"} Phones &amp; PDAs (3)
+          %li
+            %a{:href="category.html"} Cameras (2)
+      -# end sidebar -->
+      
+      .span9
+        #myCarousel.carousel.slide
+          .carousel-inner
+            .item.ative
+              %img{:src => "css/images/carousel_1.jpg", :alt => ""}
+              .carousel-caption
+                %h4 First Thumbnail label
+                %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+            .item
+              %img{:src => "css/images/carousel_2.jpg", :alt => ""}
+              .carousel-caption
+                %h4 Second Thumbnail label
+                %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+            .item
+              %img{:src => "css/images/carousel_3.jpg", :alt => ""}
+              .carousel-caption
+                %h4 Third Thumbnail label
+                %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+            %a.left.carousel-control{:href => "#myCarousel", :data => {:slide => "prev"}} &lsaquo;
+            %a.right.carousel-control{:href =>"#myCarousel", :data => {:slide => "next"}} &rsaquo;
+		  
+		  
+    .span7.popular_products
+      %h4 Popular products
+        %br/
+      %ul.thumbnails
+       
+    %li.span2
+      .thumbnail
+        %a{:href => "product.html"} %
+          %img{:alt => "", :src => "css/images/ps-vita-150cx123.jpg"}
+        .caption
+          %a{:href => "product.html"} 
+            %h5 PS Vita
+          Price: &#36;50.00
+          %br/
+          %br/
+       
+    %li.span2
+      .thumbnail
+        %a{:href => "product.html"} 
+          %img{:alt => "", :src => "css/images/nexus-one-3-150x123.jpg"}
+        .caption
+          %a{:href = "product.html"} 
+            %h5 Nexus one
+          Price: &#36;50.00
+          %br/
+          %br/
+       
+    %li.span2
+      .thumbnail
+        %a{:href="product.html"} 
+          %img{:alt => "", :src => "css/images/thumb_sam_3d.jpg"}
+        .caption
+          %a{:href => "product.html"}
+            %h5 Samsung 3D TV
+            Price: &#36;50.00
+            %br/
+            %br/
+
+    %li.span2
+      .thumbnail
+        %a{:href => "product.html"} 
+          %img{:alt => "", :src => "css/images/ipad_case.jpg"}
+        .caption
+          %a{:href => "product.html"} 
+            %h5 iPod Case
+            Price: &#36;50.00
+            %br/
+            %br/
+       
+    %li.span2
+      .thumbnail
+        %a{:href="product.html"} %
+          %img{:alt => "", :src => "css/images/HMX-H104.JPG"}
+        .caption
+          %a{:href => "product.html"} 
+            %h5 HMX Camcorder
+            Price: &#36;50.00
+            %br/
+            %br/
+    
+    %li.span2
+      .thumbnail
+        %a{:href="product.html"} %
+          %img{:alt => "", :src => "css/images/expic.png"}
+        .caption
+            %a{:href => "product.html"} 
+            %h5 Kindle Fire
+            Price: &#36;50.00
+            %br/
+            %br/
+       
+      .span2
+		
+        .roe
+          %h4 Newsletter
+          %br/
+          %p Sign up for our weekly newsletter and stay up-to-date with the latest offers, and newest products.
+		
+          %form.form-search
+            %input.span2{:type => "text", :placeholder => "Enter your email"}
+            %br
+            %br/
+            %button.btn.pull-right{:type => "submit"} Subscribe
+          %br/
+          %br/
+          %a{:href => "#"}
+            %img{:alt => "", :title => "", :src="css/images/paypal_mc_visa_amex_disc_150x139.gif"}
+          %a{:href="#"}
+            %img{:alt => "", :src => "css/images/bnr_nowAccepting_150x60.gif"}  
+  %footer
+    %hr/
+    .row.well.no_margin_left
+
+      .span3
+        %h4 Information
+        %ul
+          %li
+            %a{:href => "two-column.html"} About Us
+          %li
+            %a{:href => "typography.html"} Delivery Information
+          %li
+            %a{:href => "typography.html"} Privacy Policy
+          %li
+            %a{:href => "typography.html"} Terms &amp; Conditions
+      .span3
+        %h4 Customer Service
+        %ul
+          %li
+            %a{:href => "contact.html"} Contact Us
+          %li
+            %a{:href => "typography.html"} Returns
+          %li
+            %a{:href => "typography.html"} Site Map
+	    
+      .span3
+        %h4 Extras
+        %ul
+          %li
+            %a{:href => "typography.html"} Brands
+          %li
+            %a{:href => "typography.html"} Gift Vouchers
+          %li
+            %a{:href => "typography.html"} Affiliates
+          %li
+            %a{:href => "typography.html"} Specials
+		
+      .span2
+        %h4 My Account
+        %ul
+          %li
+            %a{:href => "my_account.html"} My Account
+          %li
+            %a{:href => "typography.html"} Order History
+          %li
+            %a{:href => "typography.html"} Wish List
+          %li
+			      %a{:href => "typography.html"} Newsletter
+-# /container -->
+
+
+  #theme_switcher
+    .btn-group
+      %a.btn.btn-success.dropdown-toggle{:href => "#", :data => {:toggle => "dropdown"}}
+        Switch theme 
+        %span.caret"
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#", :rel => "united"} United
+        %li
+          %a{:href => "#", :rel => "spacelab"} Spacelab
+
+
+-# Le javascript
+-# ================================================== -->
+-# Placed at the end of the document so the pages load faster -->
+
+  %script{:src => "js/jquery.min.js"}
+  %script{:src => "bootstrap/js/bootstrap.js"}
+  %script{:src = "js/jquery.rating.pack.js"}
+
