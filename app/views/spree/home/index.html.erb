@@ -1,0 +1,9 @@
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render :partial => 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<div data-hook="sidebar_central">
+  <%= render :partial => 'spree/shared/main_sidebar' %>
+</div>
