@@ -1,0 +1,11 @@
+%head{:data => {:hook => "inside_head"}}
+  = render :partial => 'spree/shared/head'
+%body
+
+  .container
+    = render :partial => 'spree/shared/header'
+
+    = render :partial => 'spree/shared/sidebar'
+    = render :partial => 'spree/shared/footer'
+
+-# /container -->

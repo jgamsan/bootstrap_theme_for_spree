@@ -1,0 +1,14 @@
+<ul class="nav pull-right">
+  <li class="divider-vertical"></li>
+
+  <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
+  <form class="navbar-search" action="/products" method="get">
+    <%= select_tag :taxon,
+        options_for_select([[t(:all_departments), '']] +
+                              @taxons.map {|t| [t.name, t.id]},
+                            @taxon ? @taxon.id : params[:taxon]), :class => "search span2" %>
+    <%= text_field_tag :keywords, params[:keywords], :placeholder => t(:search), :class => "search-query span2" %>
+
+    <button class="btn btn-primary btn-small search_btn" type="submit">Go</button>
+  </form>
+</ul>

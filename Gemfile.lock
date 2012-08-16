@@ -50,6 +50,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.0.4.0)
     braintree (2.16.0)
       builder (>= 2.0.0)
     builder (3.0.0)
@@ -241,6 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   haml
   haml-rails
