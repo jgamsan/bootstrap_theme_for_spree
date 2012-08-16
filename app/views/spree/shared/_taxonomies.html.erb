@@ -1,7 +1,11 @@
-<div class="span3">
+<div class="span3 product_list">
   <% get_taxonomies.each do |taxonomy| %>
     <ul class="nav nav-list">
-      <li class='breadcrumb'><%= t(:shop_by_taxonomy, :taxonomy => taxonomy.name.singularize) %></li>
+      <ul class='breadcrumb'>
+        <li>
+          <%= t(:shop_by_taxonomy, :taxonomy => taxonomy.name.singularize) %>
+        </li>
+      </ul>
       <%= new_taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
     </ul>
   <% end %>

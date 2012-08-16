@@ -1,0 +1,39 @@
+<div class="span9">
+  <ul class="breadcrumb">
+    <%= breadcrumbs(@taxon) %>
+  </ul>
+  <%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+  %>
+  <% if products.empty? %>
+    <%= t(:no_products_found) %>
+  <% elsif params.key?(:keywords) %>
+    <h6 class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h6>
+  <% end %>
+  <div class="row">
+    <div class="span9"><!-- start categories -->
+      <% if products.any? %>
+        <ul class="thumbnails" data-hook>
+          <% products.each do |product| %>
+            <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+              <li class="span3">
+                <div class="thumbnail">
+                  <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+                  <div class="caption">
+                    <%= link_to truncate(product.name, :length => 50), product, :title => product.name %>
+                    <span class="price selling" itemprop="price"><%= number_to_currency product.price %></span>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <% if paginated_products.respond_to?(:num_pages) %>
+        <%= paginate paginated_products %>
+      <% end %>
+    </div><!-- end categories -->
+  </div>
+</div>
