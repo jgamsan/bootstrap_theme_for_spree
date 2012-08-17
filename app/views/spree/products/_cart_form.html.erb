@@ -1,0 +1,59 @@
+<%= form_for :order, :url => populate_orders_url, :class => "form-inline" do |f| %>
+  <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+    <% if @product.has_variants? %>
+      <div id="product-variants" class="span6">
+        <h6 class="product-section-title"><%= t(:variants) %></h6>
+        <ul>
+          <% has_checked = false
+          @product.variants.active.each_with_index do |v,index|
+            next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+            checked = !has_checked && (v.in_stock || Spree::Config[:allow_backorders])
+            has_checked = true if checked %>
+            <li>
+              <%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders] %>
+              <label for="<%= ['products', @product.id, v.id].join('_') %>">
+                <span class="variant-description">
+                  <%= variant_options v %>
+                </span>
+                <% if variant_price_diff v %>
+                  <span class="price diff"><%= variant_price_diff v %></span>
+                <% end %>
+              </label>
+            </li>
+          <% end%>
+        </ul>
+      </div>
+    <% end%>
+
+    <% if @product.price %>
+      <div class="span6" data-hook="product_price">
+        <div id="product-price">
+          <h2>
+            <strong><%= t(:price) %><%= number_to_currency @product.price %></strong>
+            <small>Ex Tax: $500.00</small><br /><br />
+          </h2>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="span3 no_margin_left">
+          <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
+            <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => 'span1', :in => 1..@product.on_hand %>
+            <%= button_tag :class => 'btn btn-primary', :id => 'add-to-cart-button', :type => :submit do %>
+              <%= t(:add_to_cart) %>
+            <% end %>
+          <% else %>
+            <%= content_tag('strong', t(:out_of_stock)) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="span1">
+      - OR -
+      </div>
+      <div class="span2">
+        <p><a href="#">Add to Wish List</a></p>
+        <p><a href="compare.html">Add to Compare</a></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
