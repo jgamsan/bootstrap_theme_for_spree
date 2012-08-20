@@ -5,5 +5,5 @@ Deface::Override.new(:virtual_path => %q{spree/products/_thumbnails},
 
 Deface::Override.new(:virtual_path => %q{spree/products/_thumbnails},
                      :name => %q{replace_class_in_li_product_thumbnails},
-                     :replace => %q{li.tmb-all},
+                     :replace => %q{.tmb-all},
                      :text => %q{<li class="span1">})

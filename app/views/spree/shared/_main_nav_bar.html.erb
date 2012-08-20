@@ -15,8 +15,8 @@
         <a href="#">EUR</a>
       </div>
       <div class="span2">
-        <a href="cart.html"><h4>Shopping Cart (3)</h4></a>
-        <a href="cart.html">2 item(s) - $40.00</a>
+        <h4><%= link_to t('cart'), cart_path %></h4>
+        <%= new_link_to_cart %>
       </div>
       <div class="span3 customer_service">
         <h4>FREE delivery on ALL orders</h4>
@@ -26,7 +26,7 @@
     <br />
     <div class="row">
       <div class="links pull-right">
-        <a href="index.html">Home</a> |
+        <%= link_to t(:home), root_path %> |
         <a href="my_account.html">My Account</a> |
         <a href="cart.html">Shopping Cart</a> |
         <a href="two-column.html">About</a> |

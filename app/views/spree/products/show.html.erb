@@ -1,6 +1,9 @@
-<% content_for :sidebar do -%>
+<div class="span9">
+  <ul class="breadcrumb">
+    <%= breadcrumbs(@taxon) %>
+  </ul>
   <div class="row" data-hook="product_show">
-    <% @body_id = 'product-details' %>
+    <#% @body_id = 'product-details' %>
     <div class="span9">
       <h1><%= accurate_title %></h1>
     </div>
@@ -96,4 +99,4 @@
       </div>
     </div>
   </div>
-<% end -%>
+</div>
